@@ -15,18 +15,18 @@ namespace CS321_W4D2_ExerciseLogAPI.Core.Services
             _activityTypeRepo = activityTypeRepo;
         }
 
-        public Activity Add(Activity Activity)
+        public Activity Add(Activity activity)
         {
             // retrieve the ActivityType so we can check
-            var activityType = _activityTypeRepo.Get(Activity.ActivityTypeId);
+            var activityType = _activityTypeRepo.Get(activity.ActivityTypeId);
             // for a DurationAndDistance activity, you must supply a Distance
             if (activityType.RecordType == RecordType.DurationAndDistance
-                && Activity.Distance <= 0)
+                && activity.Distance <= 0)
             {
                 throw new ApplicationException("You must supply a Distance for this activity.");
             }
-            _activityRepo.Add(Activity);
-            return Activity;
+            _activityRepo.Add(activity);
+            return activity;
         }
 
         public Activity Get(int id)
@@ -44,14 +44,14 @@ namespace CS321_W4D2_ExerciseLogAPI.Core.Services
         public Activity Update(Activity updatedActivity)
         {
             // update the todo and save
-            var Activity = _activityRepo.Update(updatedActivity);
-            return Activity;
+            var activity = _activityRepo.Update(updatedActivity);
+            return activity;
         }
 
-        public void Remove(Activity Activity)
+        public void Remove(Activity activity)
         {
             // TODO: remove the Activity
-            _activityRepo.Remove(Activity);
+            _activityRepo.Remove(activity);
         }
 
     }

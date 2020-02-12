@@ -13,11 +13,11 @@ namespace CS321_W4D2_ExerciseLogAPI.Core.Services
             _userRepo = userRepo;
         }
 
-        public User Add(User User)
+        public User Add(User user)
         {
             // TODO: implement add
-            _userRepo.Add(User);
-            return User;
+            _userRepo.Add(user);
+            return user;
         }
 
         public User Get(int id)
@@ -35,14 +35,14 @@ namespace CS321_W4D2_ExerciseLogAPI.Core.Services
         public User Update(User updatedUser)
         {
             // update the todo and save
-            var User = _userRepo.Update(updatedUser);
-            return User;
+            var user = _userRepo.Update(updatedUser);
+            return user;
         }
 
-        public void Remove(User User)
+        public void Remove(User user)
         {
             // TODO: remove the User
-            _userRepo.Remove(User);
+            _userRepo.Remove(user);
         }
 
     }

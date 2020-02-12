@@ -13,11 +13,11 @@ namespace CS321_W4D2_ExerciseLogAPI.Core.Services
             _activityTypeRepo = ActivityTypeRepo;
         }
 
-        public ActivityType Add(ActivityType ActivityType)
+        public ActivityType Add(ActivityType activityType)
         {
             // TODO: implement add
-            _activityTypeRepo.Add(ActivityType);
-            return ActivityType;
+            _activityTypeRepo.Add(activityType);
+            return activityType;
         }
 
         public ActivityType Get(int id)
@@ -35,14 +35,14 @@ namespace CS321_W4D2_ExerciseLogAPI.Core.Services
         public ActivityType Update(ActivityType updatedActivityType)
         {
             // update the todo and save
-            var ActivityType = _activityTypeRepo.Update(updatedActivityType);
-            return ActivityType;
+            var activityType = _activityTypeRepo.Update(updatedActivityType);
+            return activityType;
         }
 
-        public void Remove(ActivityType ActivityType)
+        public void Remove(ActivityType activityType)
         {
             // TODO: remove the ActivityType
-            _activityTypeRepo.Remove(ActivityType);
+            _activityTypeRepo.Remove(activityType);
         }
 
     }

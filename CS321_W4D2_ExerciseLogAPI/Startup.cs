@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
+using CS321_W4D2_ExerciseLogAPI.Infrastructure.Data;
+using CS321_W4D2_ExerciseLogAPI.Core.Services;
 
 namespace CS321_W4D2_ExerciseLogAPI
 {
@@ -26,8 +29,17 @@ namespace CS321_W4D2_ExerciseLogAPI
         public void ConfigureServices(IServiceCollection services)
         {
             // TODO: AddDbContext
+            services.AddDbContext<AppDbContext>();
+
             // TODO: register repositories for injection
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IActivityRepository, ActivityRepository>();
+            services.AddScoped<IActivityTypeRepository, ActivityTypeRepository>();
+
             // TODO: register services for injection
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IActivityService, ActivityService>();
+            services.AddScoped<IActivityTypeService, ActivityTypeService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

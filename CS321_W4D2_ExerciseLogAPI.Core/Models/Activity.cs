@@ -3,10 +3,6 @@ namespace CS321_W4D2_ExerciseLogAPI.Core.Models
 {
     public class Activity
     {
-        public Activity()
-        {
-        }
-
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public int ActivityTypeId { get; set; }
